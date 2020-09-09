@@ -1,0 +1,24 @@
+liste de colis
+<table border=1>
+<tr><td>liste des noms</td><td>date de colis</td><td>nom de livreur</td><td>action</td><tr>
+
+{% for colis in colis %}
+<tr>
+<td>
+    {{ colis.nameColis }}
+</td>
+<td>
+    {{ colis.dateColis }}
+</td>
+<td>
+    {{ colis.nameLivreur }}
+</td>
+<td>
+<a href="{{ path('delete',{'id':colis.id}) }}">Supprimer</a>
+<a href="{{ path('edit',{'id':colis.id}) }}">Edit</a>
+<a href="">Ajouter</a>
+</br></td>
+</tr>
+{% endfor %}
+
+</table>

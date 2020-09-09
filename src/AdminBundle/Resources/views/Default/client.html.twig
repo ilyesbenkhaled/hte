@@ -1,0 +1,48 @@
+liste de colis
+<table border=1>
+<tr><td>liste des noms</td><td>date de colis</td><td>nom de livreur</td><td>action</td><tr>
+
+{% for client in client %}
+<tr>
+<td>
+    {{ client.code }}
+</td>
+<td>
+    {{ client.firstname }}
+</td>
+<td>
+    {{ client.lastname }}
+</td>
+<td>
+    {{ client.gender }}
+</td>
+<td>
+    {{ client.mail }}
+</td>
+<td>
+    {{ client.companyname }}
+</td>
+<td>
+    {{ client.phone }}
+</td>
+<td>
+    {{ client.active}}
+</td>
+<td>
+    {{ client.type }}
+</td>
+<td>
+    {{ client.urlUpdate }}
+</td>
+<td>
+    {{ client.mailWorkflow }}
+</td>
+
+<td>
+<a href="{{ path('delete',{'id':colis.id}) }}">Supprimer</a>
+<a href="{{ path('edit',{'id':colis.id}) }}">Edit</a>
+</br></td>
+</tr>
+{% endfor %}
+
+</table>
